@@ -1,0 +1,53 @@
+<div class="container">
+  <div>
+    <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchMovies()" >
+      <div>
+        <label>RECHERCHE:</label>
+        <input type="text" formControlName="searchKeyword">
+        <button>Rechercher </button>
+      </div>
+    </form>
+    <br/>
+    <form [formGroup]="searchFormGroup" (ngSubmit)="handleFilterMovies()" >
+      <div>
+        <label>FILTRE:</label>
+        <input type="text" formControlName="filterKeyword">
+        <button>Filter par titre</button>
+      </div>
+    </form>
+    <br/>
+
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>les colonnes sont triables</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th><a (click)="sortOn('id')">id</a ></th>
+          <th><a (click)="sortOn('title')">Titre</a></th>
+          <th><a (click)="sortOn('rottenTomatoesRating')">note Rotten Tomatoes</a></th>
+          <th><a (click)="sortOn('iMDBRating')">Evaluation IMDB</a></th>
+          <th><a (click)="sortOn('iMDBVotes')">nombre de votes sur IMDB</a></th>
+        </tr>
+      </thead>
+
+      <tbody>
+            <tr *ngFor="let m of movies">
+             <td> {{ m.id }}</td>
+             <td> {{ m.title }}</td>
+             <td> {{ m.rottenTomatoesRating }}</td>
+             <td> {{ m.iMDBRating }}</td>
+             <td> {{ m.iMDBVotes }}</td>
+             <td> <button (click)="details(m.id)">Détail</button></td>
+            </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div>
+
+ <div *ngIf="errorMessage">
+{{errorMessage}}
+ </div>
+<div>
+  <form [formGroup]="loginFormGroup" (ngSubmit)="handleLogin()">
+    <div>
+      <label for="">
+        Utilisateur :
+      </label>
+      <input type="text" formControlName="username">
+    </div>
+
+    <div>
+      <label for="">
+        Mot de passe :
+      </label>
+      <input type="password" formControlName="password">
+    </div>
+    <button type="submit"> login</button>
+
+  </form>
+</div>
+</div>

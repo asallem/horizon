@@ -1,0 +1,19 @@
+<div class="container">
+  <div>
+    <table>
+      <thead>
+      </thead>
+      <tbody *ngIf="movie">
+            <tr><th>Id : {{movie.id}}</th></tr>
+            <tr><th>Titre : {{movie.title}}</th></tr>
+            <tr><th>Note Rotten Tomatoes : {{movie.rottenTomatoesRating}}</th></tr>
+            <tr><th>Evaluation IMDB : {{movie.iMDBRating}}</th></tr>
+            <tr><th>Nombre de votes sur IMDB : {{movie.iMDBVotes}}</th></tr>
+            <tr><th>Distributeur : {{movie.distributor}}</th></tr>
+            <tr><th>Date de réalisation : {{movie.releaseDate}}</th></tr>
+      </tbody>
+    </table>
+  </div>
+  <div><button (click)="goToList()">retour à la recherche initiale</button></div>
+</div>
+
